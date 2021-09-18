@@ -1,1 +1,1 @@
-# fn
+# javascript utility library
