@@ -1,7 +1,7 @@
-const set = require('./helpers/set')
-const get = require('./helpers/get')
+const set = require('../_helpers/set')
+const get = require('../_helpers/get')
 
-function copyMany(array) {
+function copy(array) {
   const arrayCopy = []
   let leftIndex = -1
   let rightIndex = array.length
@@ -14,4 +14,4 @@ function copyMany(array) {
   return arrayCopy
 }
 
-module.exports = copyMany
+module.exports = copy

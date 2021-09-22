@@ -1,5 +1,5 @@
-const get = require('./helpers/get')
-const set = require('./helpers/set')
+const get = require('../_helpers/get')
+const set = require('../_helpers/set')
 
 function copy(object) {
   const objectCopy = {}
