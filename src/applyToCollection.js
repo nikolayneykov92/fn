@@ -1,5 +1,5 @@
-const isArray = require('./_helpers/isArray')
-const isObject = require('./_helpers/isArray')
+const isArray = require('./isArray')
+const isObject = require('./isObject')
 
 function applyToCollection(applyToArray, applyToObject) {
   return function (collection, ...params) {

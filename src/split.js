@@ -1,5 +1,5 @@
-const get = require('../_helpers/get')
-const set = require('../_helpers/set')
+const get = require('./get')
+const set = require('./set')
 
 function split(string, separator) {
   let array = []
@@ -23,9 +23,11 @@ function split(string, separator) {
   return array
 }
 
-const text = 'Mnogo_haresvam_Niki_N_.'
-const result = split(text, '_')
-console.log(result) // [ 'Mnogo', 'haresvam', 'Niki', 'N', '.' ]
+module.exports = split
+
+// const text = 'Mnogo_haresvam_Niki_N_.'
+// const result = split(text, '_')
+// console.log(result) // [ 'Mnogo', 'haresvam', 'Niki', 'N', '.' ]
 
 // let subString = ''
 // subString += 'm'

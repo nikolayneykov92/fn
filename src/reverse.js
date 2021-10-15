@@ -1,5 +1,5 @@
-const set = require('../_helpers/set')
-const get = require('../_helpers/get')
+const set = require('./set')
+const get = require('./get')
 
 function reverse(array) {
   const reversedArray = []
@@ -14,11 +14,13 @@ function reverse(array) {
   return reversedArray
 }
 
-const numbers = [1, 2, 3, 4, 5]
-const reversedNumbers = reverse(numbers)
-console.log(reversedNumbers) // [5, 4, 3, 2, 1]
-console.log(numbers) //[1, 2, 3, 4, 5]
-console.log(reversedNumbers !== numbers) // true
+module.exports = reverse
+
+// const numbers = [1, 2, 3, 4, 5]
+// const reversedNumbers = reverse(numbers)
+// console.log(reversedNumbers) // [5, 4, 3, 2, 1]
+// console.log(numbers) //[1, 2, 3, 4, 5]
+// console.log(reversedNumbers !== numbers) // true
 
 /**
   
