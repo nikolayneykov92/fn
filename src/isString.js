@@ -1,5 +1,3 @@
-function isString(string) {
+export default function isString(string) {
   return typeof string === 'string'
 }
-
-module.exports = isString

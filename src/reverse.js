@@ -1,7 +1,7 @@
-const set = require('./set')
-const get = require('./get')
+import get from './get'
+import set from './set'
 
-function reverse(array) {
+export default function reverse(array) {
   const reversedArray = []
   let leftIndex = -1
   let rightIndex = array.length
@@ -14,13 +14,11 @@ function reverse(array) {
   return reversedArray
 }
 
-module.exports = reverse
-
-// const numbers = [1, 2, 3, 4, 5]
-// const reversedNumbers = reverse(numbers)
-// console.log(reversedNumbers) // [5, 4, 3, 2, 1]
-// console.log(numbers) //[1, 2, 3, 4, 5]
-// console.log(reversedNumbers !== numbers) // true
+const numbers = [1, 2, 3, 4, 5]
+const reversedNumbers = reverse(numbers)
+console.log(reversedNumbers) // [5, 4, 3, 2, 1]
+console.log(numbers) //[1, 2, 3, 4, 5]
+console.log(reversedNumbers !== numbers) // true
 
 /**
   

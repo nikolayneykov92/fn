@@ -1,5 +1,3 @@
-function isArray(collection) {
+export default function isArray(collection) {
   return Array.isArray(collection)
 }
-
-module.exports = isArray

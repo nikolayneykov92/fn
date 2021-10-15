@@ -1,7 +1,7 @@
-const copy = require('./src/copy')
-const join = require('./src/join')
-const split = require('./src/split')
-const reverse = require('./src/reverse')
+import copy from './src/copy'
+import join from './src/join'
+import split from './src/split'
+import reverse from './src/reverse'
 
 const numbers = [1, 2, 3, 4, 5]
 const infinity = { shape: 'circle', size: 15, female: true }

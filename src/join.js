@@ -1,6 +1,6 @@
-const get = require('./get')
+import get from './get'
 
-function join(array, separator) {
+export default function join(array, separator) {
   let string = array.length === 0 ? '' : get(array, 0)
 
   for (let i = 1; i < array.length; i++) {
@@ -9,8 +9,6 @@ function join(array, separator) {
 
   return string
 }
-
-module.exports = join
 
 // const array = ['Mnogo', 'haresvam', 'Niki', 'N', '.']
 // console.log(join(array, '_')) // Mnogo_haresvam_Niki_N_.

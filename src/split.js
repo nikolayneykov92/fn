@@ -1,7 +1,7 @@
-const get = require('./get')
-const set = require('./set')
+import get from './get'
+import set from './set'
 
-function split(string, separator) {
+export default function split(string, separator) {
   let array = []
   let subString = ''
 
@@ -22,8 +22,6 @@ function split(string, separator) {
 
   return array
 }
-
-module.exports = split
 
 // const text = 'Mnogo_haresvam_Niki_N_.'
 // const result = split(text, '_')

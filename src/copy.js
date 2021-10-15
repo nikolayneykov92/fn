@@ -1,29 +1,28 @@
-const get = require('./get')
-const set = require('./set')
-const applyToCollection = require('./applyToCollection')
+import applyToCollection from './applyToCollection'
+import get from './get'
+import set from './set'
 
 function copyObject(object) {
- const objectCopy = {}
+  const objectCopy = {}
 
- for (const key in object) {
-   set(objectCopy, key, get(object, key))
- }
+  for (const key in object) {
+    set(objectCopy, key, get(object, key))
+  }
 
- return objectCopy
+  return objectCopy
 }
-
 
 function copyArray(array) {
- const arrayCopy = []
- let leftIndex = -1
- let rightIndex = array.length
+  const arrayCopy = []
+  let leftIndex = -1
+  let rightIndex = array.length
 
- while (++leftIndex <= --rightIndex) {
-   set(arrayCopy, leftIndex, get(array, leftIndex))
-   set(arrayCopy, rightIndex, get(array, rightIndex))
- }
+  while (++leftIndex <= --rightIndex) {
+    set(arrayCopy, leftIndex, get(array, leftIndex))
+    set(arrayCopy, rightIndex, get(array, rightIndex))
+  }
 
- return arrayCopy
+  return arrayCopy
 }
 
-module.exports = applyToCollection(copyArray, copyObject)
+export default applyToCollection(copyArray, copyObject)

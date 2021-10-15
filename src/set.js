@@ -1,5 +1,3 @@
-function set(collection, key, value) {
+export default function set(collection, key, value) {
   collection[key] = value
 }
-
-module.exports = set

@@ -1,7 +1,7 @@
-const isArray = require('./isArray')
-const isObject = require('./isObject')
+import isArray from './isArray'
+import isObject from './isObject'
 
-function applyToCollection(applyToArray, applyToObject) {
+export default function applyToCollection(applyToArray, applyToObject) {
   return function (collection, ...params) {
     if (isArray(collection)) {
       return applyToArray(collection, ...params)
@@ -12,5 +12,3 @@ function applyToCollection(applyToArray, applyToObject) {
     return collection
   }
 }
-
-module.exports = applyToCollection
