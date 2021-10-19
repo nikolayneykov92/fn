@@ -1,4 +1,5 @@
 import copy from './src/copy'
+import forEach from './src/forEach'
 import join from './src/join'
 import split from './src/split'
 import reverse from './src/reverse'
@@ -15,6 +16,22 @@ const copyInfinity = copy(infinity)
 console.log(infinity) // { shape: 'circle', size: 15, female: true }
 console.log(copyInfinity) // { shape: 'circle', size: 15, female: true }
 console.log(infinity === copyInfinity) // false
+
+forEach(numbers, (number, index) => {
+  console.log(index, number)
+  // 0 1
+  // 1 2
+  // 2 3
+  // 3 4
+  // 4 5
+})
+
+forEach(infinity, (value, key) => {
+  console.log(key, value)
+  // shape 'circle'
+  // size 15
+  // female true
+})
 
 const joinedNumbers = join(numbers, '_')
 console.log(joinedNumbers) // 1_2_3_4_5
