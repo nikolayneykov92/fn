@@ -1,4 +1,5 @@
 import copy from './src/copy'
+import filter from './src/filter'
 import forEach from './src/forEach'
 import join from './src/join'
 import split from './src/split'
@@ -16,6 +17,8 @@ const copyInfinity = copy(infinity)
 console.log(infinity) // { shape: 'circle', size: 15, female: true }
 console.log(copyInfinity) // { shape: 'circle', size: 15, female: true }
 console.log(infinity === copyInfinity) // false
+
+console.log(filter(numbers, (number, index) => (number % 2 !== 0 && number !== 3) || number === 4 || index === 1)) // [ 1, 2, 4, 5 ]
 
 forEach(numbers, (number, index) => {
   console.log(index, number)
