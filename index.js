@@ -2,8 +2,10 @@ import copy from './src/copy'
 import filter from './src/filter'
 import forEach from './src/forEach'
 import join from './src/join'
-import split from './src/split'
+import negate from './src/negate'
+import reject from './src/reject'
 import reverse from './src/reverse'
+import split from './src/split'
 
 const numbers = [1, 2, 3, 4, 5]
 const infinity = { shape: 'circle', size: 15, female: true }
@@ -39,8 +41,15 @@ forEach(infinity, (value, key) => {
 const joinedNumbers = join(numbers, '_')
 console.log(joinedNumbers) // 1_2_3_4_5
 
-const splittedNumbers = split(joinedNumbers, '_')
-console.log(splittedNumbers) // [1, 2, 3, 4, 5]
+const predicate = () => false
+const negatedPredicate = negate(predicate)
+console.log(predicate()) // false
+console.log(negatedPredicate()) // true
+
+console.log(reject(numbers, (number, index) => (number % 2 !== 0 && number !== 3) || number === 4 || index === 1)) // [ 3 ]
 
 const reversedNumbers = reverse(numbers)
 console.log(reversedNumbers) // [5, 4, 3, 2, 1]
+
+const splittedNumbers = split(joinedNumbers, '_')
+console.log(splittedNumbers) // [1, 2, 3, 4, 5]
