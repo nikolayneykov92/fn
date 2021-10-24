@@ -1,5 +1,8 @@
 import copy from './src/copy'
 import filter from './src/filter'
+import findIndex from './src/findIndex'
+import findKey from './src/findKey'
+import findValue from './src/findValue'
 import forEach from './src/forEach'
 import join from './src/join'
 import negate from './src/negate'
@@ -21,6 +24,13 @@ console.log(copyInfinity) // { shape: 'circle', size: 15, female: true }
 console.log(infinity === copyInfinity) // false
 
 console.log(filter(numbers, (number, index) => (number % 2 !== 0 && number !== 3) || number === 4 || index === 1)) // [ 1, 2, 4, 5 ]
+
+console.log(findIndex(['kiki', 'miki', 'kimi'], value => value[0] === 'm')) // 1
+
+console.log(findKey({ name: 'kiki', password: 'miki', inLoveWith: 'kimi' }, value => value[0] === 'm')) // password
+
+console.log(findValue(['kiki', 'miki', 'kimi'], value => value[0] === 'm')) // miki
+console.log(findValue({ name: 'kiki', password: 'miki', inLoveWith: 'kimi' }, value => value[0] === 'm')) // miki
 
 forEach(numbers, (number, index) => {
   console.log(index, number)
