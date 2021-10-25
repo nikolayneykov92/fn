@@ -8,6 +8,7 @@ import join from './src/join'
 import negate from './src/negate'
 import reject from './src/reject'
 import reverse from './src/reverse'
+import skip from './src/skip'
 import split from './src/split'
 import take from './src/take'
 
@@ -61,6 +62,8 @@ console.log(reject(numbers, (number, index) => (number % 2 !== 0 && number !== 3
 
 const reversedNumbers = reverse(numbers)
 console.log(reversedNumbers) // [5, 4, 3, 2, 1]
+
+console.log(skip(numbers, 3)) // [4, 5]
 
 const splittedNumbers = split(joinedNumbers, '_')
 console.log(splittedNumbers) // [1, 2, 3, 4, 5]
