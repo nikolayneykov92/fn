@@ -9,6 +9,7 @@ import negate from './src/negate'
 import reject from './src/reject'
 import reverse from './src/reverse'
 import split from './src/split'
+import take from './src/take'
 
 const numbers = [1, 2, 3, 4, 5]
 const infinity = { shape: 'circle', size: 15, female: true }
@@ -63,3 +64,5 @@ console.log(reversedNumbers) // [5, 4, 3, 2, 1]
 
 const splittedNumbers = split(joinedNumbers, '_')
 console.log(splittedNumbers) // [1, 2, 3, 4, 5]
+
+console.log(take(numbers, 3)) // [1, 2, 3]
