@@ -6,6 +6,7 @@ import findValue from './src/findValue'
 import forEach from './src/forEach'
 import join from './src/join'
 import negate from './src/negate'
+import pick from './src/pick'
 import reject from './src/reject'
 import reverse from './src/reverse'
 import skip from './src/skip'
@@ -57,6 +58,10 @@ const predicate = () => false
 const negatedPredicate = negate(predicate)
 console.log(predicate()) // false
 console.log(negatedPredicate()) // true
+
+const obj = { id: '1', username: 'Lea', password: '12345', email: 'lea@com' }
+console.log(pick(obj, 'id', 'username')) // { id: '1', username: 'Lea' }
+console.log(pick(obj, 'username', 'password', 'email')) // { username: 'Lea', password: '12345', email: 'lea@com' }
 
 console.log(reject(numbers, (number, index) => (number % 2 !== 0 && number !== 3) || number === 4 || index === 1)) // [ 3 ]
 
