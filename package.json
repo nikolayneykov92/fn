@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "babel-node",
-    "test": "jest"
-  },
+    "test": "jest", 
+    "test:coverage": "npm run test -- --coverage"
+  }, 
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nikolayneykov92/fn.git"
