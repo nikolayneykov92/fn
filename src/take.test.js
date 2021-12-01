@@ -8,10 +8,10 @@ describe('take', () => {
     expect(take([1, 2, 3], 3)).toEqual([1, 2, 3])
   })
 
-  test('should return first n values from an empty array', () => {
+  test('should return empty array from an empty array for any count', () => {
     expect(take([], 0)).toEqual([])
-    expect(take([], 1)).toEqual([undefined])
-    expect(take([], 2)).toEqual([undefined, undefined])
-    expect(take([], 3)).toEqual([undefined, undefined, undefined])
+    expect(take([], 1)).toEqual([])
+    expect(take([], 2)).toEqual([])
+    expect(take([], 3)).toEqual([])
   })
 })
