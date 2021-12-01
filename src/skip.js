@@ -1,12 +1,16 @@
-import get from './get'
-import set from './set'
+import loop from './loop'
+import push from './push'
 
-export default function skip(array, count) {
+const skip = (array, count) => {
   const subArray = []
 
-  for (let index = count; index < array.length; index++) {
-    set(subArray, subArray.length, get(array, index))
-  }
+  loop(array, (value, index) => {
+    if (index >= count) {
+      push(subArray, value)
+    }
+  })
 
   return subArray
 }
+
+export default skip
