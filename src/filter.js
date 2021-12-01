@@ -1,14 +1,16 @@
-import get from './get'
-import set from './set'
+import loop from './loop'
+import push from './push'
 
-export default function filter(array, predicate) {
+const filter = (array, predicate) => {
   const filteredArray = []
 
-  for (let index = 0; index < array.length; index++) {
-    if (predicate(get(array, index), index)) {
-      set(filteredArray, filteredArray.length, get(array, index))
+  loop(array, (value, index) => {
+    if (predicate(value, index)) {
+      push(filteredArray, value)
     }
-  }
+  })
 
   return filteredArray
 }
+
+export default filter
