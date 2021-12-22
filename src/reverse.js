@@ -1,32 +1,15 @@
-import get from './get'
+import loop from './loop'
 import set from './set'
 
-export default function reverse(array) {
+const reverse = array => {
   const reversedArray = []
-  let leftIndex = -1
-  let rightIndex = array.length
+  reversedArray.length = array.length
 
-  while (++leftIndex <= --rightIndex) {
-    set(reversedArray, leftIndex, get(array, rightIndex))
-    set(reversedArray, rightIndex, get(array, leftIndex))
-  }
+  loop(array, (value, index) => {
+    set(reversedArray, array.length - 1 - index, value)
+  })
 
   return reversedArray
 }
 
-const numbers = [1, 2, 3, 4, 5]
-const reversedNumbers = reverse(numbers)
-console.log(reversedNumbers) // [5, 4, 3, 2, 1]
-console.log(numbers) //[1, 2, 3, 4, 5]
-console.log(reversedNumbers !== numbers) // true
-
-/**
-  
-[_, _, _, _, _]
-[5, _, _, _, _]
-[5, _, _, _, 1]
-[5, 4, _, _, 1]
-[5, 4, _, 2, 1]
-[5, 4, 3, 2, 1]
-[5, 4, 3, 2, 1]
- */
+export default reverse

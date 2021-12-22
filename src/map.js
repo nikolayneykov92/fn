@@ -1,11 +1,12 @@
 import loop from './loop'
-import push from './push'
+import set from './set'
 
 const map = (array, transformer) => {
   const mappedArray = []
+  mappedArray.length = array.length
 
   loop(array, (value, index) => {
-    push(mappedArray, transformer(value, index))
+    set(mappedArray, index, transformer(value, index))
   })
 
   return mappedArray
