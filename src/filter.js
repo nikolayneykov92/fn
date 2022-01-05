@@ -1,14 +1,18 @@
 import loop from './loop'
-import push from './push'
+import set from './set'
 
 const filter = (array, predicate) => {
+  let lastIndex = 0
   const filteredArray = []
+  filteredArray.length = array.length
 
   loop(array, (value, index) => {
     if (predicate(value, index)) {
-      push(filteredArray, value)
+      set(filteredArray, lastIndex++, value)
     }
   })
+
+  filteredArray.length = lastIndex
 
   return filteredArray
 }
